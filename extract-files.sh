@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=ginkgo
+DEVICE=sm6125-common
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -16,7 +16,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/potato/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -47,6 +47,6 @@ fi
 # Initialize the helper for common device
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-common.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
