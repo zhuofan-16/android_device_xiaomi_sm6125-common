@@ -49,6 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.hardware.nfc_nci=nqx.default \
     ro.hardware.vulkan=adreno \
     ro.opengles.version=196610 \
+    ro.se.type=HCE,UICC \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
